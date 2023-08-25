@@ -1,0 +1,429 @@
+[
+  {
+    "capacity": 1,
+    "distance": [1.8],
+    "neighbor": [11],
+    "node": 1,
+    "position": [1, 1]
+  },
+  {
+    "capacity": 4,
+    "distance": [2.0],
+    "neighbor": [1],
+    "node": 2,
+    "position": [3, 1]
+  },
+  {
+    "capacity": 1,
+    "distance": [1.8],
+    "neighbor": [14],
+    "node": 3,
+    "position": [13, 1]
+  },
+  {
+    "capacity": 4,
+    "distance": [2.0],
+    "neighbor": [3],
+    "node": 4,
+    "position": [15, 1]
+  },
+  {
+    "node": 5,
+    "position": [24.5, 1],
+    "neighbor": [17],
+    "distance": [2.12],
+    "capacity": 1
+  },
+  {
+    "node": 6,
+    "position": [26.5, 1],
+    "neighbor": [5],
+    "distance": [2.0],
+    "capacity": 6
+  },
+  {
+    "node": 7,
+    "position": [36.5, 1],
+    "neighbor": [20],
+    "distance": [2.12],
+    "capacity": 1
+  },
+  {
+    "node": 8,
+    "position": [38.5, 1],
+    "neighbor": [7],
+    "distance": [2.0],
+    "capacity": 6
+  },
+  {
+    "node": 9,
+    "position": [48.5, 1],
+    "neighbor": [23],
+    "distance": [2.12],
+    "capacity": 1
+  },
+  {
+    "node": 10,
+    "position": [50.5, 1],
+    "neighbor": [9],
+    "distance": [2.0],
+    "capacity": 6
+  },
+  {
+    "node": 11,
+    "position": [2, 2.5],
+    "neighbor": [2, 12, 25, 26],
+    "distance": [1.8, 4.0, 1.8, 2.5],
+    "capacity": 4
+  },
+  {
+    "node": 12,
+    "position": [6, 2.5],
+    "neighbor": [11, 13, 26, 27],
+    "distance": [4.0, 4.0, 2.5, 2.5],
+    "capacity": 4
+  },
+  {
+    "node": 13,
+    "position": [10, 2.5],
+    "neighbor": [12, 14, 27, 28],
+    "distance": [4.0, 4.0, 2.5, 2.5],
+    "capacity": 4
+  },
+  {
+    "node": 14,
+    "position": [14, 2.5],
+    "neighbor": [4, 13, 15, 28, 29],
+    "distance": [1.8, 4.0, 4.0, 2.5, 2.5],
+    "capacity": 4
+  },
+  {
+    "node": 15,
+    "position": [18, 2.5],
+    "neighbor": [14, 16, 29, 30],
+    "distance": [4.0, 4.0, 2.5, 2.5],
+    "capacity": 4
+  },
+  {
+    "node": 16,
+    "position": [22, 2.5],
+    "neighbor": [15, 17, 30, 31],
+    "distance": [4.0, 4.0, 2.5, 2.5],
+    "capacity": 4
+  },
+  {
+    "node": 17,
+    "position": [26, 2.5],
+    "neighbor": [6, 16, 18, 31, 32],
+    "distance": [1.58, 4.0, 4.0, 2.5, 2.5],
+    "capacity": 4
+  },
+  {
+    "node": 18,
+    "position": [30, 2.5],
+    "neighbor": [17, 19, 32, 33],
+    "distance": [4.0, 4.0, 2.5, 2.5],
+    "capacity": 4
+  },
+  {
+    "node": 19,
+    "position": [34, 2.5],
+    "neighbor": [18, 20, 33, 34],
+    "distance": [4.0, 4.0, 2.5, 2.5],
+    "capacity": 4
+  },
+  {
+    "node": 20,
+    "position": [38, 2.5],
+    "neighbor": [8, 19, 21, 34, 35],
+    "distance": [1.58, 4.0, 4.0, 2.5, 2.5],
+    "capacity": 4
+  },
+  {
+    "node": 21,
+    "position": [42, 2.5],
+    "neighbor": [20, 22, 35, 36],
+    "distance": [4.0, 4.0, 2.5, 2.5],
+    "capacity": 4
+  },
+  {
+    "node": 22,
+    "position": [46, 2.5],
+    "neighbor": [21, 23, 36, 37],
+    "distance": [4.0, 4.0, 2.5, 2.5],
+    "capacity": 4
+  },
+  {
+    "node": 23,
+    "position": [50, 2.5],
+    "neighbor": [10, 22, 24, 37, 38],
+    "distance": [1.58, 4.0, 5.22, 2.5, 1.8],
+    "capacity": 4
+  },
+  {
+    "node": 24,
+    "position": [55, 4],
+    "neighbor": [23, 38, 51],
+    "distance": [5.22, 4.0, 5.22],
+    "capacity": 20
+  },
+  {
+    "node": 25,
+    "position": [1, 4],
+    "neighbor": [11, 26, 39],
+    "distance": [1.8, 3.0, 1.8],
+    "capacity": 4
+  },
+  {
+    "node": 26,
+    "position": [4, 4],
+    "neighbor": [11, 12, 25, 27, 39, 40],
+    "distance": [2.5, 2.5, 3.0, 4.0, 2.5, 2.5],
+    "capacity": 8
+  },
+  {
+    "node": 27,
+    "position": [8, 4],
+    "neighbor": [12, 13, 26, 28, 40, 41],
+    "distance": [2.5, 2.5, 4.0, 4.0, 2.5, 2.5],
+    "capacity": 8
+  },
+  {
+    "node": 28,
+    "position": [12, 4],
+    "neighbor": [13, 14, 27, 29, 41, 42],
+    "distance": [2.5, 2.5, 4.0, 4.0, 2.5, 2.5],
+    "capacity": 8
+  },
+  {
+    "node": 29,
+    "position": [16, 4],
+    "neighbor": [14, 15, 28, 30, 42, 43],
+    "distance": [2.5, 2.5, 4.0, 4.0, 2.5, 2.5],
+    "capacity": 8
+  },
+  {
+    "node": 30,
+    "position": [20, 4],
+    "neighbor": [15, 16, 29, 31, 43, 44],
+    "distance": [2.5, 2.5, 4.0, 4.0, 2.5, 2.5],
+    "capacity": 8
+  },
+  {
+    "node": 31,
+    "position": [24, 4],
+    "neighbor": [16, 17, 30, 32, 44, 45],
+    "distance": [2.5, 2.5, 4.0, 4.0, 2.5, 2.5],
+    "capacity": 8
+  },
+  {
+    "node": 32,
+    "position": [28, 4],
+    "neighbor": [17, 18, 31, 33, 45, 46],
+    "distance": [2.5, 2.5, 4.0, 4.0, 2.5, 2.5],
+    "capacity": 8
+  },
+  {
+    "node": 33,
+    "position": [32, 4],
+    "neighbor": [18, 19, 32, 34, 46, 47],
+    "distance": [2.5, 2.5, 4.0, 4.0, 2.5, 2.5],
+    "capacity": 8
+  },
+  {
+    "node": 34,
+    "position": [36, 4],
+    "neighbor": [19, 20, 33, 35, 47, 48],
+    "distance": [2.5, 2.5, 4.0, 4.0, 2.5, 2.5],
+    "capacity": 8
+  },
+  {
+    "node": 35,
+    "position": [40, 4],
+    "neighbor": [20, 21, 34, 36, 48, 49],
+    "distance": [2.5, 2.5, 4.0, 4.0, 2.5, 2.5],
+    "capacity": 8
+  },
+  {
+    "node": 36,
+    "position": [44, 4],
+    "neighbor": [21, 22, 35, 37, 49, 50],
+    "distance": [2.5, 2.5, 4.0, 4.0, 2.5, 2.5],
+    "capacity": 8
+  },
+  {
+    "node": 37,
+    "position": [48, 4],
+    "neighbor": [22, 23, 36, 38, 50, 51],
+    "distance": [2.5, 2.5, 4.0, 3.0, 2.5, 2.5],
+    "capacity": 8
+  },
+  {
+    "node": 38,
+    "position": [51, 4],
+    "neighbor": [23, 24, 37, 51],
+    "distance": [1.8, 4.0, 3.0, 1.8],
+    "capacity": 4
+  },
+  {
+    "node": 39,
+    "position": [2, 5.5],
+    "neighbor": [25, 26, 40, 52],
+    "distance": [1.8, 2.5, 4.0, 1.8],
+    "capacity": 4
+  },
+  {
+    "node": 40,
+    "position": [6, 5.5],
+    "neighbor": [26, 27, 39, 41],
+    "distance": [2.5, 2.5, 4.0, 4.0],
+    "capacity": 4
+  },
+  {
+    "node": 41,
+    "position": [10, 5.5],
+    "neighbor": [27, 28, 40, 42],
+    "distance": [2.5, 2.5, 4.0, 4.0],
+    "capacity": 4
+  },
+  {
+    "node": 42,
+    "position": [14, 5.5],
+    "neighbor": [28, 29, 41, 43, 54],
+    "distance": [2.5, 2.5, 4.0, 4.0, 1.8],
+    "capacity": 4
+  },
+  {
+    "node": 43,
+    "position": [18, 5.5],
+    "neighbor": [29, 30, 42, 44],
+    "distance": [2.5, 2.5, 4.0, 4.0],
+    "capacity": 4
+  },
+  {
+    "node": 44,
+    "position": [22, 5.5],
+    "neighbor": [30, 31, 43, 45],
+    "distance": [2.5, 2.5, 4.0, 4.0],
+    "capacity": 4
+  },
+  {
+    "node": 45,
+    "position": [26, 5.5],
+    "neighbor": [31, 32, 44, 46, 56],
+    "distance": [2.5, 2.5, 4.0, 4.0, 1.58],
+    "capacity": 4
+  },
+  {
+    "node": 46,
+    "position": [30, 5.5],
+    "neighbor": [32, 33, 45, 47],
+    "distance": [2.5, 2.5, 4.0, 4.0],
+    "capacity": 4
+  },
+  {
+    "node": 47,
+    "position": [34, 5.5],
+    "neighbor": [33, 34, 46, 48],
+    "distance": [2.5, 2.5, 4.0, 4.0],
+    "capacity": 4
+  },
+  {
+    "node": 48,
+    "position": [38, 5.5],
+    "neighbor": [34, 35, 47, 49, 58],
+    "distance": [2.5, 2.5, 4.0, 4.0, 1.58],
+    "capacity": 4
+  },
+  {
+    "node": 49,
+    "position": [42, 5.5],
+    "neighbor": [35, 36, 48, 50],
+    "distance": [2.5, 2.5, 4.0, 4.0],
+    "capacity": 4
+  },
+  {
+    "node": 50,
+    "position": [46, 5.5],
+    "neighbor": [36, 37, 49, 51],
+    "distance": [2.5, 2.5, 4.0, 4.0],
+    "capacity": 4
+  },
+  {
+    "node": 51,
+    "position": [50, 5.5],
+    "neighbor": [24, 37, 38, 50, 60],
+    "distance": [5.22, 2.5, 1.8, 4.0, 1.58],
+    "capacity": 4
+  },
+  {
+    "node": 52,
+    "position": [1, 7],
+    "neighbor": [53],
+    "distance": [2.0],
+    "capacity": 4
+  },
+  {
+    "node": 53,
+    "position": [3, 7],
+    "neighbor": [39],
+    "distance": [1.8],
+    "capacity": 1
+  },
+  {
+    "node": 54,
+    "position": [13, 7],
+    "neighbor": [55],
+    "distance": [2.0],
+    "capacity": 4
+  },
+  {
+    "node": 55,
+    "position": [15, 7],
+    "neighbor": [42],
+    "distance": [1.8],
+    "capacity": 1
+  },
+  {
+    "node": 56,
+    "position": [25.5, 7],
+    "neighbor": [57],
+    "distance": [2.0],
+    "capacity": 6
+  },
+  {
+    "node": 57,
+    "position": [27.5, 7],
+    "neighbor": [45],
+    "distance": [2.12],
+    "capacity": 1
+  },
+  {
+    "node": 58,
+    "position": [37.5, 7],
+    "neighbor": [59],
+    "distance": [2.0],
+    "capacity": 6
+  },
+  {
+    "node": 59,
+    "position": [39.5, 7],
+    "neighbor": [48],
+    "distance": [2.12],
+    "capacity": 1
+  },
+  {
+    "node": 60,
+    "position": [49.5, 7],
+    "neighbor": [61],
+    "distance": [2.0],
+    "capacity": 6
+  },
+  {
+    "node": 61,
+    "position": [51.5, 7],
+    "neighbor": [51],
+    "distance": [2.12],
+    "capacity": 1
+  }
+]
