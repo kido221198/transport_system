@@ -4,6 +4,7 @@ import random
 import logging
 import networkx as nx
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 class Controller:
@@ -14,7 +15,7 @@ class Controller:
     or import the TCP client for interacting with actual models.
     """
 
-    def __init__(self, topology='hex_topology3.json', roadmap='hex_roadmap3.json', H=1, K=100.):
+    def __init__(self, topology='hex_topology4.json', roadmap='hex_roadmap4.json', H=1, K=10., origin=True):
         """
         Initialize the Controller.
         Load up the Workspace Configuration.
@@ -51,6 +52,7 @@ class Controller:
         self.__hist_V = []
         self.__unexpected_event = False
         self.__idle_step = 0
+        self.__origin = origin
 
         # Common memory allocation
         self.__pallets = dict()
@@ -62,8 +64,8 @@ class Controller:
         """
         Import topology and roadmap configuration.
         """
-        self.__G = nx.DiGraph(dim=(57, 7))
-        self.__V = nx.DiGraph(dim=(14, 4))
+        self.__G = nx.DiGraph(dim=(59, 7))
+        self.__V = nx.DiGraph(dim=(59, 7))
         import json
 
         # Create topology graph
@@ -80,6 +82,12 @@ class Controller:
                 self.__V.nodes[n['node']]['occupied'] = 0
                 self.__V.nodes[n['node']]['weight'] = 0
 
+            self.__V_laplacian = nx.to_numpy_array(self.__V)
+            for i, row in enumerate(self.__V_laplacian):
+                row[i] = -sum(row)
+                row *= -1
+            # print(self.__V_laplacian)
+
         # Create roadmap graph
         with open(f"graphs/{self.roadmap__}", 'r') as f:
             g = json.load(f)
@@ -93,6 +101,8 @@ class Controller:
                 self.__G.nodes[node_id]['occupied'] = 0
                 self.__G.nodes[node_id]['position'] = n['position']
                 self.__G.nodes[node_id]['host'] = node_id // 100
+
+            self.__G_weighted_edges = [edge for edge in self.__G.edges if edge[0] // 100 != edge[1] // 100]
 
         # Extended Graph declaration
         self.__ext_G = []
@@ -386,8 +396,11 @@ class Controller:
                 new_pallet = Pallet(pallet_id, node['node'])
                 node['occupied'] += 1
                 (host := self.__V.nodes[node['host']])['occupied'] += 1
-                host['weight'] = self.__K * (host['occupied'] / (host['capacity'] - host['occupied'])
-                                             if host['occupied'] < host['capacity'] else host['capacity'])
+                if self.__origin:
+                    host['weight'] = self.__K * (host['occupied'] / (host['capacity'] - host['occupied'])
+                                                 if host['occupied'] < host['capacity'] else host['capacity'])
+                else:
+                    host['weight'] = self.__K * host['occupied'] / host['capacity']
                 break
 
         # Check if the pallet was put inside any workstation
@@ -479,14 +492,43 @@ class Controller:
                         #     new_edge_v = self.__ext_V[i].edges[new_id_v, prev_id_v]
                         #     new_edge_v['weight'] = new_edge_v['distance'] + prev_node_v['weight']
 
-            # Update weight
+            # Update weight on each node
+            # Formulation
+            arr = []
             for node in self.__ext_V[i].nodes:
                 node_v = self.__ext_V[i].nodes[node]
-                node_v['weight'] = self.__K * (node_v['occupied'] / (node_v['capacity'] - node_v['occupied'])
-                                               if node_v['occupied'] < node_v['capacity'] else node_v['capacity'])
+                if self.__origin:
+                    node_v['weight'] = self.__K * (node_v['occupied'] / (node_v['capacity'] - node_v['occupied'])
+                                                   if node_v['occupied'] < node_v['capacity'] else node_v['capacity'])
+                else:
+                    node_v['weight'] = self.__K * node_v['occupied'] / node_v['capacity']
+                    arr.append([node_v['weight']])
 
+            if not self.__origin:
+                # Consensus
+                weights = np.array(arr)
+                new_weights = (1 + self.__K * self.__V_laplacian) @ weights
+                for node in self.__ext_V[i].nodes:
+                    node_v = self.__ext_V[i].nodes[node]
+                    # node_v['weight'] = max(new_weights[node - 1, 0], 0)
+                    node_v['weight'] = new_weights[node - 1, 0]
+
+            # Update weight on each edge V
+            for node in self.__ext_V[i].nodes:
+                node_v = self.__ext_V[i].nodes[node]
                 for edge in self.__ext_V[i].in_edges(node_v):
-                    edge['weight'] = edge['distance'] + node_v['weight']
+                    # edge['weight'] = edge['distance'] + node_v['weight']
+                    edge['weight'] = max(edge['distance'] + node_v['weight'], 0)
+
+            # Reset and Update weight on each edge G
+            for e in self.__G_weighted_edges:
+                self.__ext_G[i].edges[e]['weight'] = 1.
+
+            for e in self.__G_weighted_edges:
+                edge = self.__ext_G[i].edges[e]
+                new_v = self.__ext_V[i].nodes[e[1] // 100]
+                edge['weight'] = max(new_v['weight'] + edge['weight'], 0)
+
 
             # Copy ith window to (i+1)th for continuous update
             if i != self.__H:
@@ -512,9 +554,11 @@ class Controller:
 
         try:
             seq_v = nx.dijkstra_path(nx.subgraph(self.__V, available_v), source // 100, target // 100, weight='weight')
+            # seq_v = nx.bellman_ford_path(nx.subgraph(self.__V, available_v), source // 100, target // 100, weight='weight')
         except nx.NetworkXNoPath as e:
             logging.warning(f"Pallet {pallet_id} has to go through {excluded_v} due to no sufficient path to {target}.")
             seq_v = nx.dijkstra_path(self.__V, source // 100, target // 100, weight='weight')
+            # seq_v = nx.bellman_ford_path(self.__V, source // 100, target // 100, weight='weight')
 
         sub_v = [sub for v in seq_v for sub in self.__V.nodes[v]['sub']]
         available_g = [v for v in sub_v if v not in excluded]
@@ -523,6 +567,7 @@ class Controller:
         # Also include the current position
         try:
             path = nx.dijkstra_path(nx.subgraph(self.__G, available_g), source, target, weight='weight')
+            # path = nx.bellman_ford_path(nx.subgraph(self.__G, available_g), source, target, weight='weight')
         except nx.NetworkXNoPath as e:
             logging.warning(f"Pallet {pallet_id} staying in {source} due to no sufficient path to {target}.")
             path = [source, source]
@@ -554,7 +599,9 @@ class Controller:
         for pallet_id, pallet in self.__pallets.items():
             if pallet.get_goal() == pallet.get_position() or pallet.get_goal() is None:
                 self.__unexpected_event = True
-                self.move_to_ws(pallet_id, random.choice(list(SceneSetup.workstation_index.keys())))
+                available_ws = list(SceneSetup.workstation_index.keys())
+                available_ws.remove(pallet.get_ws()) if pallet.get_ws() is not None else None
+                self.move_to_ws(pallet_id, random.choice(available_ws))
 
             if self.__unexpected_event or self.__idle_step % (self.__H) == 0:
                 path = self.generate_path(pallet_id, pallet.get_goal())  # Also include the current position
@@ -616,6 +663,12 @@ class Controller:
 
     def get_log(self):
         return self.__logger[:]
+
+    def get_occupied(self):
+        return self.__V.nodes.data('occupied')
+
+    def get_capacity(self):
+        return self.__V.nodes.data('capacity')
 
     def get_history(self):
         """

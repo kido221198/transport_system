@@ -112,7 +112,7 @@
   {
     "node": 801,
     "position": [38, 0],
-    "neighbor": [701],
+    "neighbor": [702],
     "distance": [1]
   },
   { "node": 802, "position": [39, 0], "neighbor": [801], "distance": [1] },
@@ -579,7 +579,7 @@
     "node": 3402,
     "position": [35, 3],
     "neighbor": [1904, 3401],
-    "distance": [1, 1, 1]
+    "distance": [1, 1]
   },
   {
     "node": 2001,
@@ -764,7 +764,7 @@
   {
     "node": 3801,
     "position": [50, 3],
-    "neighbor": [2303, 3704, 3803],
+    "neighbor": [2303, 3704, 3805],
     "distance": [1, 1, 1]
   },
   {
@@ -776,146 +776,146 @@
   {
     "node": 2401,
     "position": [52, 2],
-    "neighbor": [2304, 2402, 2407],
-    "distance": [1, 1, 1]
+    "neighbor": [2304, 3803],
+    "distance": [1, 1]
   },
   {
     "node": 2402,
     "position": [53, 2],
-    "neighbor": [2401, 2403, 2408],
-    "distance": [1, 1, 1]
+    "neighbor": [2401, 3804],
+    "distance": [1, 1]
   },
   {
     "node": 2403,
     "position": [54, 2],
-    "neighbor": [2402, 2404, 2409],
-    "distance": [1, 1, 1]
+    "neighbor": [2402],
+    "distance": [1]
   },
   {
     "node": 2404,
     "position": [55, 2],
-    "neighbor": [2403, 2405, 2410],
-    "distance": [1, 1, 1]
+    "neighbor": [2403],
+    "distance": [1]
   },
   {
     "node": 2405,
     "position": [56, 2],
-    "neighbor": [2404, 2406, 2411],
-    "distance": [1, 1, 1]
+    "neighbor": [2404, 6303],
+    "distance": [1, 1]
   },
   {
     "node": 2406,
     "position": [57, 2],
-    "neighbor": [2405, 2412],
+    "neighbor": [2405, 6304],
     "distance": [1, 1]
   },
   {
-    "node": 2407,
+    "node": 3803,
     "position": [52, 3],
-    "neighbor": [2401, 2408, 2413, 3802],
-    "distance": [1, 1, 1, 1]
+    "neighbor": [3802],
+    "distance": [1]
   },
   {
-    "node": 2408,
+    "node": 3804,
     "position": [53, 3],
-    "neighbor": [2402, 2407, 2409, 2414],
-    "distance": [1, 1, 1, 1]
+    "neighbor": [3803],
+    "distance": [1]
   },
   {
-    "node": 2409,
+    "node": 6301,
     "position": [54, 3],
-    "neighbor": [2403, 2408, 2410, 2415],
-    "distance": [1, 1, 1, 1]
+    "neighbor": [2403, 3804, 6305],
+    "distance": [1, 1, 1]
   },
   {
-    "node": 2410,
+    "node": 6302,
     "position": [55, 3],
-    "neighbor": [2404, 2409, 2411, 2416],
-    "distance": [1, 1, 1, 1]
+    "neighbor": [2404, 6301],
+    "distance": [1, 1]
   },
   {
-    "node": 2411,
+    "node": 6303,
     "position": [56, 3],
-    "neighbor": [2405, 2410, 2412, 2417],
-    "distance": [1, 1, 1, 1]
+    "neighbor": [6302],
+    "distance": [1]
   },
   {
-    "node": 2412,
+    "node": 6304,
     "position": [57, 3],
-    "neighbor": [2406, 2411, 2418],
-    "distance": [1, 1, 1]
+    "neighbor": [6303],
+    "distance": [1]
   },
   {
-    "node": 2413,
+    "node": 3807,
     "position": [52, 4],
-    "neighbor": [2407, 2414, 2419],
-    "distance": [1, 1, 1, 1]
+    "neighbor": [3808, 6401],
+    "distance": [1, 1]
   },
   {
-    "node": 2414,
+    "node": 3808,
     "position": [53, 4],
-    "neighbor": [2408, 2413, 2415, 2420],
-    "distance": [1, 1, 1, 1]
+    "neighbor": [3804, 6305, 6402],
+    "distance": [1, 1, 1]
   },
   {
-    "node": 2415,
+    "node": 6305,
     "position": [54, 4],
-    "neighbor": [2409, 2414, 2416, 2421],
-    "distance": [1, 1, 1, 1]
+    "neighbor": [6306],
+    "distance": [1]
   },
   {
-    "node": 2416,
+    "node": 6306,
     "position": [55, 4],
-    "neighbor": [2410, 2415, 2417, 2422],
-    "distance": [1, 1, 1, 1]
+    "neighbor": [6307],
+    "distance": [1]
   },
   {
-    "node": 2417,
+    "node": 6307,
     "position": [56, 4],
-    "neighbor": [2411, 2416, 2418, 2423],
-    "distance": [1, 1, 1, 1]
+    "neighbor": [6308, 6405],
+    "distance": [1, 1]
   },
   {
-    "node": 2418,
+    "node": 6308,
     "position": [57, 4],
-    "neighbor": [2412, 2417, 2424, 6205],
-    "distance": [1, 1, 1, 1]
+    "neighbor": [6205, 6304, 6406],
+    "distance": [1, 1, 1]
   },
   {
-    "node": 2419,
+    "node": 6401,
     "position": [52, 5],
-    "neighbor": [2413, 2420],
-    "distance": [1, 1, 1]
+    "neighbor": [6402],
+    "distance": [1]
   },
   {
-    "node": 2420,
+    "node": 6402,
     "position": [53, 5],
-    "neighbor": [2414, 2419, 2421],
-    "distance": [1, 1, 1]
+    "neighbor": [6403],
+    "distance": [1]
   },
   {
-    "node": 2421,
+    "node": 6403,
     "position": [54, 5],
-    "neighbor": [2415, 2420, 2422],
-    "distance": [1, 1, 1]
+    "neighbor": [6305, 6404],
+    "distance": [1, 1]
   },
   {
-    "node": 2422,
+    "node": 6404,
     "position": [55, 5],
-    "neighbor": [2416, 2421, 2423],
-    "distance": [1, 1, 1]
+    "neighbor": [6306, 6405],
+    "distance": [1, 1]
   },
   {
-    "node": 2423,
+    "node": 6405,
     "position": [56, 5],
-    "neighbor": [2417, 2422, 2424],
-    "distance": [1, 1, 1]
+    "neighbor": [6406],
+    "distance": [1]
   },
   {
-    "node": 2424,
+    "node": 6406,
     "position": [57, 5],
-    "neighbor": [2418, 2423, 6207],
-    "distance": [1, 1, 1]
+    "neighbor": [6207],
+    "distance": [1]
   },
   {
     "node": 2503,
@@ -1502,20 +1502,20 @@
   {
     "node": 3708,
     "position": [49, 4],
-    "neighbor": [3704, 3803, 5102],
+    "neighbor": [3704, 3805, 5102],
     "distance": [1, 1, 1]
   },
   {
-    "node": 3803,
+    "node": 3805,
     "position": [50, 4],
-    "neighbor": [3804],
+    "neighbor": [3806],
     "distance": [1]
   },
   {
-    "node": 3804,
+    "node": 3806,
     "position": [51, 4],
-    "neighbor": [2413, 3802],
-    "distance": [1, 1]
+    "neighbor": [3807],
+    "distance": [1]
   },
   {
     "node": 5101,
@@ -1532,13 +1532,13 @@
   {
     "node": 5103,
     "position": [50, 5],
-    "neighbor": [3803, 5104],
+    "neighbor": [3805, 5104],
     "distance": [1, 1]
   },
   {
     "node": 5104,
     "position": [51, 5],
-    "neighbor": [2419, 3804, 6004],
+    "neighbor": [3806, 6004, 6401],
     "distance": [1, 1, 1]
   },
   { "node": 5201, "position": [0, 6], "neighbor": [5205], "distance": [1] },
@@ -1708,12 +1708,12 @@
     "distance": [1]
   },
   { "node": 6101, "position": [52, 6], "neighbor": [6004, 6102, 6103], "distance": [1, 1, 1] },
-  { "node": 6102, "position": [53, 6], "neighbor": [2420, 6101, 6104], "distance": [1, 1, 1] },
+  { "node": 6102, "position": [53, 6], "neighbor": [6101, 6104, 6402], "distance": [1, 1, 1] },
   { "node": 6103, "position": [52, 7], "neighbor": [6101, 6104], "distance": [1, 1] },
   { "node": 6104, "position": [53, 7], "neighbor": [6102, 6103], "distance": [1, 1] },
   { "node": 6201, "position": [58, 2], "neighbor": [2406, 6203], "distance": [1, 1] },
   { "node": 6202, "position": [59, 2], "neighbor": [6201], "distance": [1] },
-  { "node": 6203, "position": [58, 3], "neighbor": [2412, 6205], "distance": [1, 1] },
+  { "node": 6203, "position": [58, 3], "neighbor": [6304, 6205], "distance": [1, 1] },
   { "node": 6204, "position": [59, 3], "neighbor": [6202], "distance": [1] },
   { "node": 6205, "position": [58, 4], "neighbor": [6207], "distance": [1] },
   { "node": 6206, "position": [59, 4], "neighbor": [6204], "distance": [1] },

@@ -162,10 +162,10 @@
   },
   {
     "node": 24,
-    "position": [55, 4],
-    "neighbor": [23, 38, 62],
-    "distance": [5.22, 4.0, 4.0],
-    "capacity": 24
+    "position": [55, 2.5],
+    "neighbor": [23, 38],
+    "distance": [5.0, 1.8],
+    "capacity": 6
   },
   {
     "node": 25,
@@ -260,10 +260,10 @@
   },
   {
     "node": 38,
-    "position": [51, 4],
-    "neighbor": [23, 24, 37],
-    "distance": [1.8, 4.0, 3.0],
-    "capacity": 4
+    "position": [52, 4],
+    "neighbor": [23, 37, 63, 64],
+    "distance": [2.5, 4.0, 4.0, 2.5],
+    "capacity": 8
   },
   {
     "node": 39,
@@ -352,13 +352,13 @@
   {
     "node": 51,
     "position": [50, 5.5],
-    "neighbor": [24, 38, 60],
-    "distance": [5.22, 1.8, 1.5],
+    "neighbor": [38, 60, 64],
+    "distance": [1.8, 1.5, 5.0],
     "capacity": 4
   },
   {
     "node": 52,
-    "position": [3, 7],
+    "position": [2, 7],
     "neighbor": [53],
     "distance": [3.0],
     "capacity": 8
@@ -407,7 +407,7 @@
   },
   {
     "node": 59,
-    "position": [39.5, 7],
+    "position": [41, 7],
     "neighbor": [49, 58],
     "distance": [1.8, 3.0],
     "capacity": 1
@@ -422,15 +422,29 @@
   {
     "node": 61,
     "position": [53, 7],
-    "neighbor": [24, 60],
-    "distance": [3.6, 3.0],
+    "neighbor": [60, 64],
+    "distance": [3.0, 2.5],
     "capacity": 1
   },
   {
     "node": 62,
     "position": [59, 4],
-    "neighbor": [24],
-    "distance": [4.0],
+    "neighbor": [24, 63],
+    "distance": [4.3, 3.0],
     "capacity": 1
+  },
+  {
+    "node": 63,
+    "position": [56, 4],
+    "neighbor": [24, 38, 62],
+    "distance": [1.8, 4.0, 3.0],
+    "capacity": 8
+  },
+  {
+    "node": 64,
+    "position": [55, 5.5],
+    "neighbor": [62, 63],
+    "distance": [4.3, 1.8],
+    "capacity": 6
   }
 ]

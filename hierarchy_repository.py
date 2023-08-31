@@ -7,69 +7,72 @@ class SceneSetup:
     """
     HIERARCHY_POLICY = True
     num_pallet = 2
-    ws_width, ws_height = 58, 8
+    ws_width, ws_height = 60, 8
     workspace = np.zeros((ws_width, ws_height))
 
-    workstation_index = {"pen1": 0,
-                         "pen2": 1,
-                         "KUKA": 2,
-                         "ABB1": 3,
-                         "OMRON1": 4,
-                         "pen3": 5,
-                         "pen4": 6,
-                         "UR": 7,
-                         "ABB2": 8,
-                         "OMRON2": 9,
-                         # "YASKAWA": 10
+    workstation_index = {"Workstation 01": 0,
+                         "Workstation 02": 1,
+                         "Workstation 03": 2,
+                         "Workstation 04": 3,
+                         "Workstation 05": 4,
+                         "Workstation 06": 5,
+                         "Workstation 07": 6,
+                         "Workstation 08": 7,
+                         "Workstation 09": 8,
+                         "Workstation 10": 9,
+                         "Workstation 11": 10
                          }
-    wall = [[4, 0, 8, 2],
-            [16, 0, 8, 2],
-            [28, 0, 8, 2],
-            [40, 0, 8, 2],
-            [52, 0, 6, 2],
-            [4, 6, 8, 2],
-            [16, 6, 8, 2],
-            [28, 6, 8, 2],
-            [40, 6, 8, 2],
-            [52, 6, 6, 2]]
+    wall = [[6, 0, 6, 2],
+            [18, 0, 6, 2],
+            [30, 0, 6, 2],
+            [42, 0, 6, 2],
+            [54, 0, 6, 2],
+            [6, 6, 6, 2],
+            [18, 6, 6, 2],
+            [30, 6, 6, 2],
+            [42, 6, 6, 2],
+            [54, 6, 6, 2]]
 
     workstation = [[0, 0, 2, 2],  # pen1
                    [12, 0, 2, 2],  # pen2
-                   [24, 0, 1, 2],  # KUKA
-                   [36, 0, 1, 2],  # ABB1
-                   [48, 0, 1, 2],  # OMRON1
-                   [2, 6, 2, 2],  # pen3
-                   [14, 6, 2, 2],  # pen4
-                   [27, 6, 1, 2],  # UR
-                   [39, 6, 1, 2],  # ABB2
-                   [51, 6, 1, 2]]  # OMRON2
+                   [24, 0, 2, 2],  # KUKA
+                   [36, 0, 2, 2],  # ABB1
+                   [48, 0, 2, 2],  # OMRON1
+                   [4, 6, 2, 2],  # pen3
+                   [16, 6, 2, 2],  # pen4
+                   [28, 6, 2, 2],  # UR
+                   [40, 6, 2, 2],  # ABB2
+                   [52, 6, 2, 2],  # OMRON2
+                   [58, 2, 2, 4]]  # YASKAWA
 
     parking_slot = []
 
-    queueing_slot = [[[2, 0], [3, 0], [3, 1], [2, 1]],  # pen1
-                     [[14, 0], [15, 0], [15, 1], [14, 1]],  # pen2
-                     [[25, 0], [26, 0], [27, 0], [27, 1], [26, 1], [25, 1]],  # KUKA
-                     [[37, 0], [38, 0], [39, 0], [39, 1], [38, 1], [37, 1]],  # ABB1
-                     [[49, 0], [50, 0], [51, 0], [51, 1], [50, 1], [49, 1]],  # OMRON1
-                     [[1, 7], [0, 7], [0, 6], [1, 6]],  # pen3
-                     [[13, 7], [12, 7], [12, 6], [13, 6]],  # pen4
-                     [[26, 7], [25, 7], [24, 7], [24, 6], [25, 6], [26, 6]],  # UR
-                     [[38, 7], [37, 7], [36, 7], [36, 6], [37, 6], [38, 6]],  # ABB2
-                     [[50, 7], [49, 7], [48, 7], [48, 6], [49, 6], [50, 6]]]   # OMRON2
+    queueing_slot = [[[2, 0], [3, 0], [4, 0], [5, 0], [5, 1], [4, 1], [3, 1], [2, 1]],  # pen1
+                     [[14, 0], [15, 0], [16, 0], [17, 0], [17, 1], [16, 1], [15, 1], [14, 1]],  # pen2
+                     [[26, 0], [27, 0], [28, 0], [29, 0], [29, 1], [28, 1], [27, 1], [26, 1]],  # KUKA
+                     [[38, 0], [39, 0], [40, 0], [41, 0], [41, 1], [40, 1], [39, 1], [38, 1]],  # ABB1
+                     [[50, 0], [51, 0], [52, 0], [53, 0], [53, 1], [52, 1], [51, 1], [50, 1]],  # OMRON1
+                     [[3, 7], [2, 7], [1, 7], [0, 7], [0, 6], [1, 6], [2, 6], [3, 6]],  # pen3
+                     [[15, 7], [14, 7], [13, 7], [12, 7], [12, 6], [13, 6], [14, 6], [15, 6]],  # pen4
+                     [[27, 7], [26, 7], [25, 7], [24, 7], [24, 6], [25, 6], [26, 6], [27, 6]],  # UR
+                     [[39, 7], [38, 7], [37, 7], [36, 7], [36, 6], [37, 6], [38, 6], [39, 6]],  # ABB2
+                     [[51, 7], [50, 7], [49, 7], [48, 7], [48, 6], [49, 6], [50, 6], [51, 6]],  # OMRON2
+                     []]
 
     roadway = [[2, 3, 41, 1], [2, 4, 41, 1]]
 
     robot = {
-        'pen1': {'entry': np.array([1, 0]), 'exit': np.array([0, 1])},
-        'pen2': {'entry': np.array([13, 0]), 'exit': np.array([12, 1])},
-        'KUKA': {'entry': np.array([24, 0]), 'exit': np.array([24, 1])},
-        'ABB1': {'entry': np.array([36, 0]), 'exit': np.array([36, 1])},
-        'OMRON1': {'entry': np.array([48, 0]), 'exit': np.array([48, 1])},
-        'pen3': {'entry': np.array([2, 7]), 'exit': np.array([3, 6])},
-        'pen4': {'entry': np.array([14, 7]), 'exit': np.array([15, 6])},
-        'UR': {'entry': np.array([27, 7]), 'exit': np.array([27, 6])},
-        'ABB2': {'entry': np.array([39, 7]), 'exit': np.array([39, 6])},
-        'OMRON2': {'entry': np.array([51, 7]), 'exit': np.array([51, 6])}
+        'Workstation 01': {'entry': np.array([1, 0]), 'exit': np.array([0, 1])},
+        'Workstation 02': {'entry': np.array([13, 0]), 'exit': np.array([12, 1])},
+        'Workstation 03': {'entry': np.array([25, 0]), 'exit': np.array([24, 1])},
+        'Workstation 04': {'entry': np.array([37, 0]), 'exit': np.array([36, 1])},
+        'Workstation 05': {'entry': np.array([49, 0]), 'exit': np.array([48, 1])},
+        'Workstation 06': {'entry': np.array([4, 7]), 'exit': np.array([5, 6])},
+        'Workstation 07': {'entry': np.array([16, 7]), 'exit': np.array([17, 6])},
+        'Workstation 08': {'entry': np.array([28, 7]), 'exit': np.array([29, 6])},
+        'Workstation 09': {'entry': np.array([40, 7]), 'exit': np.array([41, 6])},
+        'Workstation 10': {'entry': np.array([52, 7]), 'exit': np.array([53, 6])},
+        'Workstation 11': {'entry': np.array([58, 5]), 'exit': np.array([58, 2])}
     }
 
     EMPTY = 0

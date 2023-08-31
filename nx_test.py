@@ -2,7 +2,7 @@ import networkx as nx
 import numpy as np
 import matplotlib.pyplot as plt
 
-G = nx.DiGraph(dim=(57, 7))
+G = nx.DiGraph()
 pos = None
 size = None
 temp = None
@@ -21,7 +21,7 @@ temp = None
 #     import json
 #     json.dump(temp, f)
 
-with open("graphs/hex_topology3.json", 'r') as f:
+with open("graphs/hex_roadmap4.json", 'r') as f:
     import json
     g = json.load(f)
     G.add_nodes_from([node["node"] for node in g])
@@ -32,8 +32,20 @@ with open("graphs/hex_topology3.json", 'r') as f:
 
     try:
         size = [node['capacity'] for node in g]
+        font_size = 10
     except KeyError:
         size = [1] * len(g)
+        font_size = 5
+    # print(G.edges)
+    # # print(G.edges.data(True))
+    # # print(nx.adjacency_matrix(G))
+    # adj = nx.to_numpy_array(G, nodelist=[1, 2, 11])
+    # for i, row in enumerate(adj):
+    #     row[i] = -np.sum(row)
+    #     row *= -1
+    # print(adj)
+    # print(adj, type(adj))
+    # print(nx.directed_laplacian_matrix(G))
 
 
 #     print(pos)
@@ -56,5 +68,5 @@ with open("graphs/hex_topology3.json", 'r') as f:
 
 # plt.subplot(111)
 nx.draw(G, pos, with_labels=True, **{"node_color": "white", "edgecolors": "black",
-                                     "font_size": 10, "node_size": [n * 250 for n in size]})
+                                     "font_size": font_size, "node_size": [n * 250 for n in size]})
 plt.show()
